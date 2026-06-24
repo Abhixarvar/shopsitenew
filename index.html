@@ -9,239 +9,22 @@
 <meta property="og:description" content="Handpicked luxury Indian wear — Sarees, Lehengas, Suits & more. Free delivery within Delhi NCR.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Diplomata+SC&family=Noto+Sans+Devanagari:wght@300;400;500&family=Tenor+Sans&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --cream:#F5F0E8;--cream2:#EDE5D8;--ink:#1C1712;--ink2:#3A3128;
-  --gold:#B8965A;--gold2:#D4AD6B;--gold3:#F2D9A2;--dust:#8C7B6B;
-  --white:#FEFCF8;--border:rgba(184,150,90,.25);--border2:rgba(28,23,18,.12);
-}
-html{scroll-behavior:smooth}
-body{font-family:"Tenor Sans",serif;background:var(--cream);color:var(--ink);min-height:100vh;overflow-x:hidden}
-.cursor-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform .1s}
-.cursor-ring{width:30px;height:30px;border:1px solid var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);opacity:.65;transition:transform .18s ease}
-.topbar{background:var(--ink);color:var(--gold3);font-family:"Tenor Sans",sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;padding:8px 40px;display:flex;justify-content:space-between;align-items:center}
-.topbar a{color:var(--gold3);text-decoration:none;opacity:.75;transition:opacity .2s;letter-spacing:2px}
-.topbar a:hover{opacity:1}
-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:800}
-.header-inner{max-width:1280px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
-.brand{text-align:center;flex:1;cursor:pointer}
-.brand-name{font-family:"Diplomata SC",cursive;font-size:32px;letter-spacing:4px;color:var(--ink);line-height:1}
-.brand-name span{color:var(--gold)}
-.brand-hindi{font-family:"Noto Sans Devanagari",sans-serif;font-size:12px;font-weight:300;color:var(--dust);letter-spacing:1px;margin-top:5px}
-.brand-addr{font-family:"Tenor Sans",sans-serif;font-size:10px;color:var(--dust);letter-spacing:2px;text-transform:uppercase;margin-top:3px;opacity:.7}
-.hdr-side{width:160px;display:flex;align-items:center}
-.hdr-side.right{justify-content:flex-end;gap:20px}
-.hdr-icon-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--ink2);letter-spacing:2px;font-family:"Tenor Sans",sans-serif;text-transform:uppercase;display:flex;align-items:center;gap:6px;padding:6px 0;transition:color .2s}
-.hdr-icon-btn:hover{color:var(--gold)}
-.cart-badge{background:var(--gold);color:var(--white);border-radius:50%;width:16px;height:16px;font-size:9px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
-nav{background:var(--white);border-bottom:1px solid var(--border2)}
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none}
-.nav-inner::-webkit-scrollbar{display:none}
-.nav-inner a{font-family:"Tenor Sans",sans-serif;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ink2);text-decoration:none;padding:11px 16px;border-bottom:2px solid transparent;transition:all .25s;white-space:nowrap}
-.nav-inner a:hover,.nav-inner a.active{color:var(--gold);border-bottom-color:var(--gold)}
-.announce{background:var(--gold);color:var(--ink);text-align:center;padding:9px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase}
-.hero{position:relative;height:68vh;min-height:440px;overflow:hidden;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1C1712 0%,#3A3128 50%,#2A2018 100%);background-size:cover;background-position:center;transition:background .8s}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(28,23,18,.92) 0%,rgba(28,23,18,.5) 55%,transparent 100%)}
-.hero-content{position:relative;z-index:2;padding:0 80px;max-width:660px}
-.hero-overline{font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.hero-overline::before{content:"";width:40px;height:1px;background:var(--gold)}
-.hero-h1{font-family:"Cormorant Garamond",serif;font-size:68px;font-weight:300;line-height:1.0;color:var(--cream);margin-bottom:8px}
-.hero-h1 em{font-style:italic;color:var(--gold3);font-weight:300}
-.hero-sub{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:300;font-style:italic;color:rgba(245,240,232,.5);margin-bottom:32px;letter-spacing:1px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-gold{background:var(--gold);color:var(--ink);border:none;padding:13px 34px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(245,240,232,.4);padding:13px 34px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-thumbs{position:absolute;right:56px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;gap:10px}
-.hero-thumb{width:56px;height:72px;border:1px solid rgba(184,150,90,.3);overflow:hidden;cursor:pointer;transition:all .3s;position:relative}
-.hero-thumb::after{content:"";position:absolute;inset:0;background:rgba(28,23,18,.45);transition:opacity .3s}
-.hero-thumb.active::after,.hero-thumb:hover::after{opacity:0}
-.hero-thumb.active{border-color:var(--gold)}
-.hero-thumb-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px}
-.hero-thumb-img img{width:100%;height:100%;object-fit:cover}
-.section{max-width:1280px;margin:0 auto;padding:68px 40px}
-.sec-eyebrow{font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:12px}
-.sec-eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
-.sec-title{font-family:"Cormorant Garamond",serif;font-size:44px;font-weight:300;color:var(--ink);line-height:1.1;margin-bottom:44px}
-.sec-title em{font-style:italic;color:var(--gold)}
-.cat-strip{display:flex;gap:0;border:1px solid var(--border2);overflow-x:auto;scrollbar-width:none;background:var(--white);margin-bottom:48px}
-.cat-strip::-webkit-scrollbar{display:none}
-.cat-pill{padding:10px 20px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dust);cursor:pointer;border-right:1px solid var(--border2);border-bottom:2px solid transparent;white-space:nowrap;transition:all .22s;flex-shrink:0}
-.cat-pill:last-child{border-right:none}
-.cat-pill:hover{color:var(--ink);background:var(--cream)}
-.cat-pill.active{color:var(--ink);border-bottom-color:var(--gold);background:var(--cream)}
-.hanger-wrap{position:relative;display:flex;flex-direction:column;align-items:center;padding:0 0 28px}
-.stand-pole{position:relative;width:100%;max-width:680px;display:flex;justify-content:center;z-index:10;margin-bottom:0}
-.pole-bar{width:68%;height:8px;background:linear-gradient(180deg,#C8C0B0 0%,#9A9080 40%,#C8C0B0 100%);border-radius:4px;box-shadow:0 2px 8px rgba(28,23,18,.3),inset 0 1px 0 rgba(255,255,255,.4);align-self:center}
-.pole-stem{position:absolute;top:-42px;left:50%;transform:translateX(-50%);width:9px;height:42px;background:linear-gradient(90deg,#B0A898 0%,#9A9080 50%,#B0A898 100%);border-radius:4px 4px 0 0}
-.pole-hook{position:absolute;top:-76px;left:50%;transform:translateX(-50%);width:34px;height:34px}
-.carousel-vp{width:100%;max-width:920px;height:420px;position:relative;margin-top:-4px}
-.carousel-stage{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d}
-.cloth-item{position:absolute;width:185px;transform-style:preserve-3d;cursor:pointer;will-change:transform}
-.hanger-wire{position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:20px;height:22px;z-index:2}
-.cloth-card{background:var(--white);border:1px solid var(--border2);box-shadow:0 8px 30px rgba(28,23,18,.09);overflow:hidden;transform-origin:top center;width:185px}
-.cloth-item.is-front .cloth-card{box-shadow:0 18px 52px rgba(28,23,18,.2);border-color:rgba(184,150,90,.5)}
-.cloth-img-wrap{width:100%;height:220px;overflow:hidden;background:linear-gradient(160deg,var(--cream2) 0%,var(--cream) 100%);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
-.cloth-img-wrap img{width:100%;height:100%;object-fit:cover}
-.cloth-badge{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--gold3);font-family:"Tenor Sans",sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:4px 8px}
-.cloth-info{padding:13px 13px 11px;border-top:1px solid var(--border2)}
-.cloth-name{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:400;color:var(--ink);line-height:1.3;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cloth-pricing{display:flex;align-items:baseline;gap:7px}
-.cloth-price{font-family:"Tenor Sans",sans-serif;font-size:14px;font-weight:600;color:var(--ink)}
-.cloth-old{font-family:"Tenor Sans",sans-serif;font-size:11px;color:var(--dust);text-decoration:line-through}
-.cloth-actions{display:flex;gap:0;margin-top:10px;border-top:1px solid var(--border2);padding-top:9px}
-.c-add-btn{flex:1;background:var(--ink);color:var(--cream);border:none;padding:9px 6px;font-family:"Tenor Sans",sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.c-add-btn:hover{background:var(--gold);color:var(--ink)}
-.c-wa-btn{background:none;border:none;border-left:1px solid var(--border2);padding:9px 12px;cursor:pointer;font-size:14px;color:var(--dust);transition:all .2s}
-.c-wa-btn:hover{background:#25D366;color:#fff}
-.rotate-controls{display:flex;align-items:center;gap:28px;margin-top:24px;position:relative;z-index:20}
-.rot-btn{width:46px;height:46px;border:1px solid var(--border2);background:var(--white);cursor:pointer;font-size:18px;color:var(--ink2);transition:all .25s;display:flex;align-items:center;justify-content:center}
-.rot-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--cream)}
-.rotate-label{font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--dust)}
-.front-spotlight{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:300;font-style:italic;color:var(--ink2);text-align:center;margin-top:10px;min-height:28px;letter-spacing:.5px}
-.ornament{text-align:center;padding:28px 0 0;color:var(--gold);font-size:18px;letter-spacing:12px;opacity:.5}
-.promo-duet{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.promo-card{position:relative;height:400px;overflow:hidden;cursor:pointer}
-.promo-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;font-size:80px}
-.promo-card:hover .promo-bg{transform:scale(1.04)}
-.promo-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,23,18,.88) 0%,rgba(28,23,18,.18) 50%,transparent 100%)}
-.promo-txt{position:absolute;bottom:34px;left:34px;color:var(--cream)}
-.promo-eye{font-family:"Tenor Sans",sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold3);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.promo-eye::before{content:"";width:22px;height:1px;background:var(--gold3)}
-.promo-h3{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:300;line-height:1.1;margin-bottom:14px}
-.promo-cta{font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);display:flex;align-items:center;gap:8px}
-.promo-cta::after{content:"\2192";transition:transform .2s}
-.promo-card:hover .promo-cta{gap:14px}
-footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top:72px}
-.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
-.footer-logo{font-family:"Diplomata SC",cursive;font-size:20px;letter-spacing:3px;color:var(--cream);margin-bottom:5px}
-.footer-logo span{color:var(--gold)}
-.footer-hindi{font-family:"Noto Sans Devanagari",sans-serif;font-size:12px;font-weight:300;color:var(--gold3);margin-bottom:14px;opacity:.7}
-.footer-brand p{font-size:12px;line-height:1.8;letter-spacing:.5px;color:rgba(140,123,107,.65);margin-bottom:5px}
-.footer-col h4{font-family:"Tenor Sans",sans-serif;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--gold3);margin-bottom:18px;opacity:.8}
-.footer-col a{display:block;font-size:12px;color:rgba(140,123,107,.6);text-decoration:none;margin-bottom:10px;letter-spacing:.5px;transition:color .2s}
-.footer-col a:hover{color:var(--cream)}
-.footer-bottom{max-width:1280px;margin:0 auto;border-top:1px solid rgba(184,150,90,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(140,123,107,.4);letter-spacing:1px}
-.drawer-ov{display:none;position:fixed;inset:0;background:rgba(28,23,18,.5);z-index:1400;backdrop-filter:blur(2px)}
-.drawer-ov.open{display:block}
-.cart-drawer{position:fixed;right:-460px;top:0;width:420px;height:100vh;background:var(--white);z-index:1500;transition:right .38s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid var(--border2)}
-.cart-drawer.open{right:0}
-.cart-hdr{padding:26px 30px 18px;border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}
-.cart-title{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:300;letter-spacing:1px}
-.drawer-close{background:none;border:1px solid var(--border2);width:30px;height:30px;cursor:pointer;font-size:15px;color:var(--ink2);display:flex;align-items:center;justify-content:center;transition:all .2s}
-.drawer-close:hover{border-color:var(--ink);color:var(--ink)}
-.cart-scroll{flex:1;overflow-y:auto;padding:22px 30px}
-.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border2)}
-.ci-img{width:72px;height:90px;flex-shrink:0;overflow:hidden;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:34px}
-.ci-img img{width:100%;height:100%;object-fit:cover}
-.ci-info{flex:1}
-.ci-name{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:400;margin-bottom:5px;line-height:1.3}
-.ci-price{font-family:"Tenor Sans",sans-serif;font-size:13px;color:var(--ink);margin-bottom:8px}
-.qty-row{display:flex;align-items:center;gap:10px}
-.qty-btn{width:24px;height:24px;border:1px solid var(--border2);background:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--ink2)}
-.qty-btn:hover{border-color:var(--ink)}
-.qty-n{font-family:"Tenor Sans",sans-serif;font-size:13px;min-width:20px;text-align:center}
-.ci-remove{background:none;border:none;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dust);cursor:pointer;font-family:"Tenor Sans",sans-serif;margin-top:7px;transition:color .2s}
-.ci-remove:hover{color:#8B3333}
-.cart-empty-msg{text-align:center;padding:56px 20px;font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic;color:var(--dust)}
-.cart-foot{padding:22px 30px;border-top:1px solid var(--border2)}
-.cart-total-row{display:flex;justify-content:space-between;margin-bottom:16px;font-family:"Tenor Sans",sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.cart-total-row span:last-child{font-size:15px;font-weight:600}
-.btn-wa-checkout{width:100%;background:#25D366;color:#fff;border:none;padding:14px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.btn-wa-checkout:hover{background:#1DA851}
-.modal-bd{display:none;position:fixed;inset:0;background:rgba(28,23,18,.72);z-index:2000;backdrop-filter:blur(4px);align-items:center;justify-content:center}
-.modal-bd.open{display:flex}
-.modal-box{background:var(--white);width:90%;max-width:840px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;position:relative;animation:fup .35s cubic-bezier(.34,1.2,.64,1)}
-@keyframes fup{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-img{min-height:460px;background:var(--cream2);display:flex;align-items:center;justify-content:center;font-size:100px;overflow:hidden;position:relative}
-.modal-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.modal-info{padding:44px 38px;display:flex;flex-direction:column;justify-content:space-between}
-.modal-close-x{position:absolute;top:18px;right:18px;background:var(--white);border:1px solid var(--border2);width:34px;height:34px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:5}
-.modal-close-x:hover{background:var(--ink);color:var(--white)}
-.modal-eyebrow{font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.modal-eyebrow::before{content:"";width:22px;height:1px;background:var(--gold)}
-.modal-name{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:300;line-height:1.15;margin-bottom:16px}
-.modal-price-el{font-family:"Tenor Sans",sans-serif;font-size:20px;margin-bottom:5px}
-.modal-mrp{font-size:12px;color:var(--dust);text-decoration:line-through;margin-left:8px}
-.modal-disc{font-size:11px;color:#6B8C5A;letter-spacing:1px;margin-bottom:4px}
-.modal-desc{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:300;line-height:1.75;color:var(--ink2);margin:18px 0 26px;font-style:italic;border-left:2px solid var(--border);padding-left:14px}
-.modal-acts{display:flex;flex-direction:column;gap:10px}
-.btn-add{background:var(--ink);color:var(--cream);border:none;padding:14px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background .25s}
-.btn-add:hover{background:var(--gold);color:var(--ink)}
-.btn-wa-modal{background:none;border:1px solid var(--border2);color:var(--ink2);padding:13px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-wa-modal:hover{background:#25D366;color:#fff;border-color:#25D366}
-.admin-ov{display:none;position:fixed;inset:0;background:rgba(28,23,18,.88);z-index:3000;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
-.admin-ov.open{display:flex}
-.admin-box{background:var(--white);width:92%;max-width:660px;max-height:92vh;overflow-y:auto;border:1px solid var(--border)}
-.admin-hdr{background:var(--ink);padding:20px 26px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
-.admin-hdr-title{font-family:"Diplomata SC",cursive;font-size:17px;color:var(--cream);letter-spacing:2px}
-.admin-hdr-title span{color:var(--gold);font-size:11px;font-family:"Tenor Sans",sans-serif;letter-spacing:3px;display:block;margin-top:2px}
-.admin-body{padding:26px}
-.admin-lock{text-align:center;padding:20px 0}
-.admin-lock-icon{font-size:38px;margin-bottom:14px;opacity:.45}
-.admin-lock p{font-family:"Cormorant Garamond",serif;font-size:17px;font-style:italic;color:var(--dust);margin-bottom:22px}
-.adm-sec{background:var(--cream);border:1px solid var(--border2);padding:18px 20px;margin-bottom:16px}
-.adm-sec-title{font-family:"Tenor Sans",sans-serif;font-size:9.5px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.adm-sec-title::before{content:"";width:18px;height:1px;background:var(--gold)}
-.fg{margin-bottom:12px}
-.fg label{display:block;font-family:"Tenor Sans",sans-serif;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dust);margin-bottom:4px}
-.fg input,.fg select,.fg textarea{width:100%;background:var(--white);border:1px solid var(--border2);padding:9px 12px;font-family:"Tenor Sans",sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border .2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
-.fg-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.adm-btn{background:var(--ink);color:var(--cream);border:none;padding:10px 24px;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:4px}
-.adm-btn:hover{background:var(--gold);color:var(--ink)}
-.adm-btn.full{width:100%}
-.img-drop{border:1.5px dashed var(--border);background:var(--white);padding:14px;text-align:center;cursor:pointer;transition:border .2s;font-family:"Tenor Sans",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dust)}
-.img-drop:hover{border-color:var(--gold)}
-.img-drop input{display:none}
-.img-drop .prev{width:100%;height:86px;object-fit:cover;margin-top:7px;display:none}
-.adm-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border2)}
-.adm-row:last-child{border-bottom:none}
-.adm-row-emoji{font-size:20px;flex-shrink:0}
-.adm-row-info{flex:1}
-.adm-row-info strong{font-family:"Cormorant Garamond",serif;font-size:14px;display:block}
-.adm-row-info small{color:var(--dust);font-size:11px;letter-spacing:.5px}
-.adm-del{background:none;border:1px solid rgba(139,51,51,.22);color:#8B3333;padding:5px 11px;font-family:"Tenor Sans",sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;flex-shrink:0}
-.adm-del:hover{background:#8B3333;color:#fff;border-color:#8B3333}
-.adm-divider{border-top:2px solid var(--border);margin:24px 0 16px;position:relative;text-align:center}
-.adm-divider span{position:relative;top:-9px;background:var(--white);padding:0 14px;font-family:"Tenor Sans",sans-serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--cream);padding:13px 26px;font-family:"Tenor Sans",sans-serif;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;z-index:9999;transition:transform .3s cubic-bezier(.34,1.2,.64,1);border-left:3px solid var(--gold)}
-.toast.show{transform:translateX(-50%) translateY(0)}
-.toast.ok{border-left-color:#6B8C5A}
-.toast.wa{border-left-color:#25D366}
-@keyframes loading-pulse{0%,100%{opacity:.4}50%{opacity:1}}
-.loading-pulse{animation:loading-pulse 1.5s ease-in-out infinite}
-@media(max-width:900px){
-  .hero-h1{font-size:46px}.hero-content{padding:0 32px}.hero-thumbs{display:none}
-  .section{padding:44px 22px}.header-inner{padding:16px 22px}.brand-name{font-size:26px}
-  .footer-inner{grid-template-columns:1fr 1fr;gap:28px}.modal-box{grid-template-columns:1fr;max-width:460px}
-  .modal-img{min-height:300px}.cart-drawer{width:100%;right:-100%}.promo-duet{grid-template-columns:1fr}
-  .promo-card{height:300px}.topbar{padding:6px 20px}.cloth-card{width:155px}.cloth-img-wrap{height:188px}.carousel-vp{height:360px}
-}
-@media(max-width:580px){
-  .hero-h1{font-size:34px}.sec-title{font-size:32px}.brand-name{font-size:21px;letter-spacing:2px}
-  .hdr-side{width:auto}.footer-inner{grid-template-columns:1fr}.cloth-card{width:130px}.cloth-img-wrap{height:158px}.carousel-vp{height:310px}
-  .admin-box{width:98%;max-width:none}
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<div class="topbar">
-  <span id="topbar-text">Free delivery within Delhi NCR</span>
-  <div style="display:flex;gap:22px">
-    <a href="tel:8799721618" data-phone>8799 721 618</a>
-    <a href="https://wa.me/918799721618" target="_blank" data-wa>WhatsApp</a>
+<header id="main-header">
+  <div class="topbar" id="topbar-banner">
+    <span id="topbar-text">Free delivery within Delhi NCR</span>
+    <div style="display:flex;gap:22px">
+      <a href="tel:8799721618" data-phone>8799 721 618</a>
+      <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa>WhatsApp</a>
+    </div>
   </div>
-</div>
-
-<header>
   <div class="header-inner">
     <div class="hdr-side">
       <button class="hdr-icon-btn" id="admin-toggle-btn" onclick="openAdmin()">Sign In</button>
@@ -252,14 +35,13 @@ footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top
       <div class="brand-addr" id="brand-addr-el">F4-3, Sector-16, Rohini, Delhi — 110085</div>
     </div>
     <div class="hdr-side right">
+      <button class="hdr-icon-btn" onclick="toggleTheme()" id="theme-toggle-btn">&#x1F316;</button>
       <button class="hdr-icon-btn" onclick="openCart()">Bag <span class="cart-badge" id="cart-count">0</span></button>
     </div>
   </div>
 </header>
 
 <nav><div class="nav-inner" id="main-nav"></div></nav>
-
-<div class="announce" id="announce-el">New Collection 2025 — Crafted for the Modern Indian Woman</div>
 
 <div class="hero" id="hero-section">
   <div class="hero-bg" id="hero-bg"></div>
@@ -274,6 +56,17 @@ footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top
     </div>
   </div>
   <div class="hero-thumbs" id="hero-thumbs"></div>
+</div>
+
+<div class="section" style="padding-top:10px; padding-bottom:10px;">
+  <div style="position:relative; width:100%; height:460px; border-radius:28px; overflow:hidden; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);">
+    <video id="bg-video" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+      <source src="second_cinematic_luxury_fas.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute; bottom:24px; right:24px; background:var(--glass-dark); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:12px 24px; border-radius:24px; border:1px solid var(--glass-border); color:var(--gold); font-family:'Outfit', sans-serif; font-size:11px; cursor:pointer; text-transform:uppercase; letter-spacing:2px; display:flex; align-items:center; gap:10px; font-weight:600; transition:all 0.3s;" onclick="toggleVideo()" id="vid-toggle-btn">
+      <span id="vid-icon">&#x23F8;</span> <span id="vid-text">Pause Video</span>
+    </div>
+  </div>
 </div>
 
 <div class="section" id="collection-sec">
@@ -294,11 +87,11 @@ footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top
     </div>
     <div class="front-spotlight" id="front-spotlight"></div>
     <div class="rotate-controls">
-      <button class="rot-btn" onclick="rotateTo(-1)">&larr;</button>
+      <button class="rot-btn" onclick="rotateTo(-1)" aria-label="Previous item"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
       <span class="rotate-label">Rotate Stand</span>
-      <button class="rot-btn" onclick="rotateTo(1)">&rarr;</button>
+      <button class="rot-btn" onclick="rotateTo(1)" aria-label="Next item"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
-    <p style="text-align:center;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dust);margin-top:8px;opacity:.55">Drag &middot; Swipe &middot; Arrow Keys</p>
+    <p style="text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);margin-top:8px;opacity:.6;font-weight:500">Drag &middot; Swipe &middot; Arrow Keys</p>
   </div>
 </div>
 
@@ -332,9 +125,14 @@ footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top
     <div class="footer-brand">
       <div class="footer-logo" id="footer-logo-el">Aarchi <span>Fashion</span></div>
       <div class="footer-hindi" id="footer-hindi-el">आपकी पहचान, हमारी शान</div>
-      <p id="footer-addr">F4-3, Sector-16<br>Rohini, Delhi — 110085</p>
+      <p id="footer-addr">
+        <a href="https://maps.google.com/?q=F4-3,+Sector-16,+Rohini,+Delhi+110085" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; display:inline-block; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+          F4-3, Sector-16<br>Rohini, Delhi — 110085<br>
+          <span style="font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-top:4px; display:inline-block;">&#x1F4CD; View on Map</span>
+        </a>
+      </p>
       <p style="margin-top:5px" data-phone-display>&#x1F4DE; 8799 721 618</p>
-      <a href="https://wa.me/918799721618" target="_blank" data-wa style="display:inline-block;margin-top:12px;background:#25D366;color:#fff;padding:8px 16px;font-family:'Tenor Sans',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none">WhatsApp Us</a>
+      <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa style="display:inline-block;margin-top:12px;background:#25D366;color:#fff;padding:8px 16px;font-family:'Outfit', sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none">WhatsApp Us</a>
     </div>
     <div class="footer-col" id="footer-nav"><h4>Navigate</h4></div>
     <div class="footer-col"><h4>Information</h4>
@@ -509,437 +307,22 @@ footer{background:var(--ink);color:var(--dust);padding:68px 40px 32px;margin-top
 </div>
 
 <div class="modal-bd" id="contact-modal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div style="background:var(--white);max-width:460px;width:90%;padding:44px;border:1px solid var(--border2);position:relative;animation:fup .3s">
+  <div style="background:rgba(254, 252, 248, 0.75);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);max-width:460px;width:90%;padding:44px;border:1px solid var(--glass-border);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,0.15);position:relative;animation:fup .3s">
     <button class="modal-close-x" onclick="document.getElementById('contact-modal').classList.remove('open')" style="position:absolute;top:16px;right:16px">&times;</button>
     <div class="sec-eyebrow" style="margin-bottom:10px">Get in Touch</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:24px">Visit <em style="color:var(--gold)">Us</em></div>
-    <div style="background:var(--cream);padding:16px 18px;margin-bottom:18px;border:1px solid var(--border2)">
-      <p style="font-family:'Tenor Sans',sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px">Address</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.7;font-style:italic" id="contact-addr">F4-3, Sector-16, Rohini, Delhi — 110085</p>
+    <div style="font-family:'Playfair Display', serif;font-size:28px;font-weight:300;margin-bottom:24px">Visit <em style="color:var(--gold)">Us</em></div>
+    <div style="background:rgba(255,255,255,0.4);padding:16px 18px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.6);border-radius:16px">
+      <p style="font-family:'Outfit', sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px">Address</p>
+      <p style="font-family:'Playfair Display', serif;font-size:16px;line-height:1.7;font-style:italic" id="contact-addr">F4-3, Sector-16, Rohini, Delhi — 110085</p>
     </div>
-    <a href="https://wa.me/918799721618" target="_blank" data-wa id="contact-wa-btn" style="display:block;background:#25D366;color:#fff;text-align:center;padding:13px;text-decoration:none;font-family:'Tenor Sans',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px">&#x1F4AC; WhatsApp</a>
-    <a href="tel:8799721618" data-phone id="contact-phone-btn" style="display:block;background:var(--ink);color:var(--cream);text-align:center;padding:13px;text-decoration:none;font-family:'Tenor Sans',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase">&#x1F4DE; 8799 721 618</a>
+    <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa id="contact-wa-btn" style="display:block;background:rgba(37,211,102,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;border:1px solid rgba(255,255,255,0.3);border-radius:16px;box-shadow:0 4px 15px rgba(37,211,102,0.2)">&#x1F4AC; WhatsApp</a>
+    <a href="tel:8799721618" data-phone id="contact-phone-btn" style="display:block;background:rgba(28,23,18,0.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--white);text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.2);border-radius:16px;box-shadow:0 4px 15px rgba(28,23,18,0.2)">&#x1F4DE; 8799 721 618</a>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<script type="module">
-// ═══════════════════════════════════════════════════════════
-//  FIREBASE
-// ═══════════════════════════════════════════════════════════
-import{initializeApp}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-import{getAnalytics}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
-import{getFirestore,collection,doc,getDocs,getDoc,setDoc,addDoc,deleteDoc}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
-import{getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut as firebaseSignOut}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
-import{getStorage,ref as sRef,uploadBytes,getDownloadURL}from"https://www.gstatic.com/firebasejs/12.13.0/firebase-storage.js";
-
-const fbApp=initializeApp({apiKey:"AIzaSyCtRx6vgFMJMkESKEk5KeVaW3r8DfLYRwM",authDomain:"archifashion-f27eb.firebaseapp.com",projectId:"archifashion-f27eb",storageBucket:"archifashion-f27eb.firebasestorage.app",messagingSenderId:"491975179823",appId:"1:491975179823:web:d3b1d70a3212dce90050da",measurementId:"G-DFNS5LFMVM"});
-const analytics=getAnalytics(fbApp),db=getFirestore(fbApp),auth=getAuth(fbApp),storage=getStorage(fbApp);
-
-// ═══════════════════════════════════════════════════════════
-//  DEFAULTS & STATE
-// ═══════════════════════════════════════════════════════════
-const RADIUS=265,CARD_W=185;
-const DEFAULT_PRODUCTS=[
-  {name:"Bridal Half-Half Silk Saree",cat:"Saree",price:4999,mrp:8999,emoji:"\u{1F458}",desc:"Stunning half-half design with heavy embroidery. Perfect for weddings.",img:""},
-  {name:"Pink Banarasi Silk Saree",cat:"Saree",price:3499,mrp:6999,emoji:"\u{1F458}",desc:"Rich pink banarasi silk with golden zari border, ideal for festivals.",img:""},
-  {name:"Cream Tissue Silk Saree",cat:"Saree",price:5999,mrp:10999,emoji:"\u{1F458}",desc:"Elegant cream tissue silk with pink border. Timeless & graceful.",img:""},
-  {name:"Kanjivaram Pure Silk Saree",cat:"Saree",price:6999,mrp:12999,emoji:"\u{1F458}",desc:"Authentic Kanjivaram with temple border. Heirloom quality weave.",img:""},
-  {name:"Designer Anarkali Suit",cat:"Suit",price:2199,mrp:3999,emoji:"\u{1F457}",desc:"Floor-length anarkali with intricate thread embroidery.",img:""},
-  {name:"Palazzo Salwar Set",cat:"Suit",price:1599,mrp:2999,emoji:"\u{1F457}",desc:"Comfortable palazzo set with matching dupatta.",img:""},
-  {name:"Bridal Lehenga \u2014 Deep Red",cat:"Lehenga",price:8999,mrp:16999,emoji:"\u{1F338}",desc:"Heavy zardozi embroidered bridal lehenga with dupatta.",img:""},
-  {name:"Net Mirror-Work Lehenga",cat:"Lehenga",price:4499,mrp:7999,emoji:"\u{1F338}",desc:"Party-wear net lehenga with traditional mirror-work detailing.",img:""},
-  {name:"Chiffon Printed Dupatta",cat:"Dupatta",price:499,mrp:999,emoji:"\u{1F9E3}",desc:"Featherweight chiffon dupatta with hand block-printed motifs.",img:""},
-  {name:"Block-Printed Cotton Kurti",cat:"Kurti",price:799,mrp:1499,emoji:"\u{1F454}",desc:"Relaxed block-printed cotton kurti for everyday elegance.",img:""},
-  {name:"Festive Sharara Set",cat:"Sharara",price:2799,mrp:4999,emoji:"\u{1F483}",desc:"Vibrant sharara set with embroidered kurti and contrast dupatta.",img:""},
-  {name:"Floor-Length Gown",cat:"Gown",price:3299,mrp:5999,emoji:"\u{1F451}",desc:"Draped floor-length gown in soft georgette for sangeet & receptions.",img:""}
-];
-
-const DEFAULT_CATEGORIES=[
-  {name:"Saree",label:"Sarees"},{name:"Suit",label:"Suits"},{name:"Lehenga",label:"Lehengas"},
-  {name:"Kurti",label:"Kurtis"},{name:"Dupatta",label:"Dupattas"},{name:"Sharara",label:"Sharara"},{name:"Gown",label:"Gowns"}
-];
-
-const DEFAULT_SETTINGS={
-  name:"Aarchi Fashion",hindi:"\u0906\u092A\u0915\u0940 \u092A\u0939\u091A\u093E\u0928, \u0939\u092E\u093E\u0930\u0940 \u0936\u093E\u0928",
-  address:"F4-3, Sector-16, Rohini, Delhi-110085",phone:"8799721618",whatsapp:"918799721618",
-  topbarText:"Free delivery within Delhi NCR",
-  announceText:"New Collection 2025 \u2014 Crafted for the Modern Indian Woman",
-  heroOverline:"New Collection",heroLine1:"Our New",heroLine2:"Collection",heroLine3:"is on the way.",
-  heroSub:"Handpicked luxury \u2014 curated for you",heroBtnPrimary:"Explore Now",heroBtnSecondary:"Visit Store",heroImage:"",
-  collectionEyebrow:"Our Edit",collectionPrefix:"The",collectionHighlight:"Collection",
-  promo1Eye:"Exclusive",promo1Line1:"The Saree",promo1Line2:"Edit",promo1Cta:"Discover",promo1Cat:"Saree",
-  promo2Eye:"Bridal",promo2Line1:"Lehenga",promo2Line2:"Couture",promo2Cta:"Explore",promo2Cat:"Lehenga",
-  footerCopyright:"\u00A9 2025 Aarchi Fashion",footerTagline:"Rohini, Delhi \u00B7 Made with \u2764\uFE0F"
-};
-
-let siteSettings={...DEFAULT_SETTINGS};
-let categories=[...DEFAULT_CATEGORIES];
-let products=[],visible=[],angle=0,target=0,raf=null;
-let dragX=null,dragging=false,cart=[],adminUnlocked=false;
-let currentCat="all",isLoading=true;
-
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/'/g,"&#39;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function fmtPhone(n){const s=n.replace(/\D/g,"");return s.length===10?s.slice(0,4)+" "+s.slice(4,7)+" "+s.slice(7):n;}
-
-// ═══════════════════════════════════════════════════════════
-//  APPLY SITE SETTINGS TO PAGE
-// ═══════════════════════════════════════════════════════════
-function applySiteSettings(s){
-  const p=s.name.split(" ");
-  document.getElementById("brand-name-el").innerHTML=esc(p[0])+' <span>'+esc(p.slice(1).join(" "))+'</span>';
-  document.getElementById("brand-hindi-el").textContent=s.hindi;
-  document.getElementById("brand-addr-el").textContent=s.address;
-  document.getElementById("topbar-text").textContent=s.topbarText;
-  document.getElementById("announce-el").textContent=s.announceText;
-  document.getElementById("hero-overline-el").textContent=s.heroOverline;
-  document.getElementById("hero-h1-el").innerHTML=esc(s.heroLine1)+'<br><em>'+esc(s.heroLine2)+'</em><br>'+esc(s.heroLine3);
-  document.getElementById("hero-sub-el").textContent=s.heroSub;
-  document.getElementById("hero-btn1").textContent=s.heroBtnPrimary;
-  document.getElementById("hero-btn2").textContent=s.heroBtnSecondary;
-  if(s.heroImage)document.getElementById("hero-bg").style.cssText="background-image:url('"+s.heroImage+"');background-size:cover;background-position:center";
-  document.getElementById("coll-eye-el").textContent=s.collectionEyebrow;
-  document.getElementById("coll-title-el").innerHTML=esc(s.collectionPrefix)+' <em>'+esc(s.collectionHighlight)+'</em>';
-  // Promo cards
-  document.getElementById("p1-eye-el").textContent=s.promo1Eye;
-  document.getElementById("p1-title-el").innerHTML=esc(s.promo1Line1)+'<br>'+esc(s.promo1Line2);
-  document.getElementById("p1-cta-el").textContent=s.promo1Cta;
-  document.getElementById("promo-card-1").onclick=function(){setCategory(s.promo1Cat);};
-  document.getElementById("p2-eye-el").textContent=s.promo2Eye;
-  document.getElementById("p2-title-el").innerHTML=esc(s.promo2Line1)+'<br>'+esc(s.promo2Line2);
-  document.getElementById("p2-cta-el").textContent=s.promo2Cta;
-  document.getElementById("promo-card-2").onclick=function(){setCategory(s.promo2Cat);};
-  // Footer
-  document.getElementById("footer-logo-el").innerHTML=esc(p[0])+' <span>'+esc(p.slice(1).join(" "))+'</span>';
-  document.getElementById("footer-hindi-el").textContent=s.hindi;
-  document.getElementById("footer-addr").innerHTML=esc(s.address).replace(",","<br>");
-  document.getElementById("footer-bottom-el").innerHTML='<span>'+esc(s.footerCopyright)+'</span><span>'+esc(s.footerTagline)+'</span>';
-  document.getElementById("contact-addr").textContent=s.address;
-  document.getElementById("admin-hdr-title-el").innerHTML=esc(s.name)+'<span>Admin Panel</span>';
-  document.title=s.name+" \u2014 Rohini, Delhi";
-  // Phone & WhatsApp links
-  document.querySelectorAll("[data-phone]").forEach(a=>{a.href="tel:"+s.phone;a.textContent=fmtPhone(s.phone);});
-  document.querySelectorAll("[data-phone-display]").forEach(el=>{el.innerHTML="\u{1F4DE} "+fmtPhone(s.phone);});
-  document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/"+s.whatsapp;});
-  document.getElementById("contact-phone-btn").innerHTML="\u{1F4DE} "+fmtPhone(s.phone);
-  // Footer nav & contact
-  buildFooterNav();
-  buildFooterContact();
-}
-
-function populateAdminFields(){
-  const s=siteSettings,m={
-    "adm-name":s.name,"adm-hindi":s.hindi,"adm-addr":s.address,"adm-phone":s.phone,"adm-wa":s.whatsapp,
-    "adm-topbar":s.topbarText,"adm-announce":s.announceText,
-    "adm-hero-over":s.heroOverline,"adm-hero-l1":s.heroLine1,"adm-hero-l2":s.heroLine2,"adm-hero-l3":s.heroLine3,
-    "adm-hero-sub":s.heroSub,"adm-hero-btn1":s.heroBtnPrimary,"adm-hero-btn2":s.heroBtnSecondary,
-    "adm-coll-eye":s.collectionEyebrow,"adm-coll-pre":s.collectionPrefix,"adm-coll-hi":s.collectionHighlight,
-    "adm-p1-eye":s.promo1Eye,"adm-p1-l1":s.promo1Line1,"adm-p1-l2":s.promo1Line2,"adm-p1-cta":s.promo1Cta,
-    "adm-p2-eye":s.promo2Eye,"adm-p2-l1":s.promo2Line1,"adm-p2-l2":s.promo2Line2,"adm-p2-cta":s.promo2Cta,
-    "adm-foot-copy":s.footerCopyright,"adm-foot-tag":s.footerTagline
-  };
-  for(const[id,v]of Object.entries(m)){const el=document.getElementById(id);if(el)el.value=v;}
-  // Promo cat selects
-  buildPromoCatSelects();
-}
-
-function buildPromoCatSelects(){
-  const opts=categories.map(c=>'<option value="'+esc(c.name)+'">'+esc(c.label)+'</option>').join("");
-  ["adm-p1-cat","adm-p2-cat"].forEach(id=>{
-    const sel=document.getElementById(id);sel.innerHTML=opts;
-  });
-  document.getElementById("adm-p1-cat").value=siteSettings.promo1Cat;
-  document.getElementById("adm-p2-cat").value=siteSettings.promo2Cat;
-}
-
-// ═══════════════════════════════════════════════════════════
-//  DYNAMIC NAV, CATEGORY STRIP, FOOTER
-// ═══════════════════════════════════════════════════════════
-function buildNav(){
-  const nav=document.getElementById("main-nav");
-  let h='<a href="#" '+(currentCat==="all"?'class="active" ':'')+'data-cat="all" onclick="setCategory(this.dataset.cat,this);return false">All</a>';
-  categories.forEach(c=>{h+='<a href="#" '+(currentCat===c.name?'class="active" ':'')+'data-cat="'+esc(c.name)+'" onclick="setCategory(this.dataset.cat,this);return false">'+esc(c.label)+'</a>';});
-  h+='<a href="#" onclick="openContact();return false">Contact</a>';
-  nav.innerHTML=h;
-}
-
-function buildCatStrip(){
-  const s=document.getElementById("cat-strip");
-  let h='<div class="cat-pill '+(currentCat==="all"?"active":"")+'" data-cat="all" onclick="setCategory(this.dataset.cat,this)">All Pieces</div>';
-  categories.forEach(c=>{h+='<div class="cat-pill '+(currentCat===c.name?"active":"")+'" data-cat="'+esc(c.name)+'" onclick="setCategory(this.dataset.cat,this)">'+esc(c.label)+'</div>';});
-  s.innerHTML=h;
-}
-
-function buildCatDropdown(){
-  const sel=document.getElementById("np-cat");
-  sel.innerHTML=categories.map(c=>'<option value="'+esc(c.name)+'">'+esc(c.label)+'</option>').join("");
-}
-
-function buildFooterNav(){
-  const el=document.getElementById("footer-nav");
-  let h='<h4>Navigate</h4><a href="#" onclick="setCategory(\'all\')">All Collections</a>';
-  categories.slice(0,4).forEach(c=>{h+='<a href="#" data-cat="'+esc(c.name)+'" onclick="setCategory(this.dataset.cat)">'+esc(c.label)+'</a>';});
-  el.innerHTML=h;
-}
-
-function buildFooterContact(){
-  const el=document.getElementById("footer-contact");
-  const s=siteSettings;
-  el.innerHTML='<h4>Contact</h4><a href="tel:'+esc(s.phone)+'" data-phone>'+fmtPhone(s.phone)+'</a><a href="https://wa.me/'+esc(s.whatsapp)+'" target="_blank" data-wa>WhatsApp</a><a href="#" onclick="openContact()">Visit Store</a>';
-}
-
-// ═══════════════════════════════════════════════════════════
-//  FIRESTORE: LOAD
-// ═══════════════════════════════════════════════════════════
-async function loadProducts(){
-  try{
-    const snap=await getDocs(collection(db,"products"));
-    if(snap.empty){try{for(const p of DEFAULT_PRODUCTS)await addDoc(collection(db,"products"),{...p});const s2=await getDocs(collection(db,"products"));products=s2.docs.map(d=>({...d.data(),id:d.id}));}catch(e){console.warn("Seed failed:",e);products=DEFAULT_PRODUCTS.map((p,i)=>({...p,id:"local_"+i}));}}
-    else products=snap.docs.map(d=>({...d.data(),id:d.id}));
-  }catch(e){console.warn("Firestore unavailable:",e);products=DEFAULT_PRODUCTS.map((p,i)=>({...p,id:"local_"+i}));}
-  isLoading=false;
-  visible=currentCat==="all"?[...products]:products.filter(p=>p.cat===currentCat);
-  buildHanger();
-}
-
-async function loadSettings(){
-  try{const snap=await getDoc(doc(db,"settings","shop"));if(snap.exists())siteSettings={...DEFAULT_SETTINGS,...snap.data()};}catch(e){console.warn("Settings load failed:",e);}
-  applySiteSettings(siteSettings);populateAdminFields();
-}
-
-async function loadCategories(){
-  try{const snap=await getDoc(doc(db,"settings","categories"));if(snap.exists()&&snap.data().list)categories=snap.data().list;}catch(e){console.warn("Categories load failed:",e);}
-  buildNav();buildCatStrip();buildCatDropdown();renderCatList();buildPromoCatSelects();
-}
-
-// ═══════════════════════════════════════════════════════════
-//  SAVE ALL SETTINGS
-// ═══════════════════════════════════════════════════════════
-async function saveAllSettings(){
-  const g=id=>document.getElementById(id).value.trim();
-  siteSettings={...siteSettings,
-    name:g("adm-name"),hindi:g("adm-hindi"),address:g("adm-addr"),phone:g("adm-phone"),whatsapp:g("adm-wa"),
-    topbarText:g("adm-topbar"),announceText:g("adm-announce"),
-    heroOverline:g("adm-hero-over"),heroLine1:g("adm-hero-l1"),heroLine2:g("adm-hero-l2"),heroLine3:g("adm-hero-l3"),
-    heroSub:g("adm-hero-sub"),heroBtnPrimary:g("adm-hero-btn1"),heroBtnSecondary:g("adm-hero-btn2"),
-    collectionEyebrow:g("adm-coll-eye"),collectionPrefix:g("adm-coll-pre"),collectionHighlight:g("adm-coll-hi"),
-    promo1Eye:g("adm-p1-eye"),promo1Line1:g("adm-p1-l1"),promo1Line2:g("adm-p1-l2"),promo1Cta:g("adm-p1-cta"),promo1Cat:g("adm-p1-cat"),
-    promo2Eye:g("adm-p2-eye"),promo2Line1:g("adm-p2-l1"),promo2Line2:g("adm-p2-l2"),promo2Cta:g("adm-p2-cta"),promo2Cat:g("adm-p2-cat"),
-    footerCopyright:g("adm-foot-copy"),footerTagline:g("adm-foot-tag")
-  };
-  applySiteSettings(siteSettings);
-  try{await setDoc(doc(db,"settings","shop"),siteSettings);showToast("All settings saved","ok");}
-  catch(e){showToast("Saved locally (sync failed)");}
-}
-
-// ═══════════════════════════════════════════════════════════
-//  CATEGORIES CRUD
-// ═══════════════════════════════════════════════════════════
-async function saveCategories(){try{await setDoc(doc(db,"settings","categories"),{list:categories});}catch(e){console.warn("Cat save failed:",e);}}
-
-function renderCatList(){
-  document.getElementById("adm-cat-list").innerHTML=categories.length?categories.map(c=>
-    '<div class="adm-row"><div class="adm-row-info"><strong>'+esc(c.label)+'</strong><small>Filter: '+esc(c.name)+'</small></div><button class="adm-del" data-cat-del="'+esc(c.name)+'" onclick="removeCategory(this.dataset.catDel)">Remove</button></div>'
-  ).join(""):'<p style="font-style:italic;color:var(--dust);font-size:13px">No categories.</p>';
-}
-
-async function addCategory(){
-  const name=document.getElementById("nc-name").value.trim();
-  const label=document.getElementById("nc-label").value.trim()||name;
-  if(!name){showToast("Enter a category name");return;}
-  if(categories.find(c=>c.name===name)){showToast("Category already exists");return;}
-  categories.push({name,label});
-  await saveCategories();
-  buildNav();buildCatStrip();buildCatDropdown();renderCatList();buildPromoCatSelects();
-  document.getElementById("nc-name").value="";document.getElementById("nc-label").value="";
-  showToast('"'+label+'" added',"ok");
-}
-
-async function removeCategory(name){
-  if(!confirm("Remove this category?"))return;
-  categories=categories.filter(c=>c.name!==name);
-  await saveCategories();
-  buildNav();buildCatStrip();buildCatDropdown();renderCatList();buildPromoCatSelects();
-  if(currentCat===name)setCategory("all");
-  showToast("Category removed","ok");
-}
-
-// ═══════════════════════════════════════════════════════════
-//  3D CAROUSEL
-// ═══════════════════════════════════════════════════════════
-function buildHanger(){
-  const stage=document.getElementById("carousel-stage");stage.innerHTML="";
-  if(isLoading){stage.innerHTML='<div style="position:absolute;left:-130px;top:70px;width:260px;text-align:center;font-family:Cormorant Garamond,serif;font-style:italic;color:var(--dust);font-size:17px" class="loading-pulse">Loading collection\u2026</div>';document.getElementById("front-spotlight").textContent="";return;}
-  if(!visible.length){stage.innerHTML='<div style="position:absolute;left:-130px;top:70px;width:260px;text-align:center;font-family:Cormorant Garamond,serif;font-style:italic;color:var(--dust);font-size:17px">Nothing here yet</div>';document.getElementById("front-spotlight").textContent="";return;}
-  visible.forEach((p,i)=>{
-    const disc=p.mrp>p.price?Math.round(((p.mrp-p.price)/p.mrp)*100):0;
-    const imgH=p.img?'<img src="'+p.img+'" alt="'+esc(p.name)+'" onerror="this.style.display=\'none\'"><span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:64px;position:absolute;inset:0">'+p.emoji+'</span>':'<span>'+p.emoji+'</span>';
-    const el=document.createElement("div");el.className="cloth-item";el.id="cl-"+i;
-    el.innerHTML='<svg class="hanger-wire" viewBox="0 0 20 22" fill="none"><path d="M10 2 Q14 2 14 7 Q14 10 10 11 Q2 13 2 18 Q2 22 18 22" stroke="#9A9080" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="2" r="2" fill="#9A9080"/></svg><div class="cloth-card" data-pid="'+esc(p.id)+'" onclick="openPD(this.dataset.pid)"><div class="cloth-img-wrap">'+imgH+(disc>0?'<div class="cloth-badge">'+disc+'% off</div>':'')+'</div><div class="cloth-info"><div class="cloth-name">'+esc(p.name)+'</div><div class="cloth-pricing"><span class="cloth-price">\u20B9'+p.price.toLocaleString("en-IN")+'</span>'+(p.mrp>p.price?'<span class="cloth-old">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div></div><div class="cloth-actions"><button class="c-add-btn" onclick="event.stopPropagation();addToCart(this.closest(\'[data-pid]\').dataset.pid)">Add to Bag</button><button class="c-wa-btn" onclick="event.stopPropagation();shareWA(this.closest(\'[data-pid]\').dataset.pid)" title="WhatsApp">\u{1F4AC}</button></div></div>';
-    stage.appendChild(el);
-  });
-  placeItems();updateSpotlight();
-}
-function placeItems(){const n=visible.length;if(!n)return;const step=360/n;visible.forEach((_,i)=>{const el=document.getElementById("cl-"+i);if(!el)return;const a=((step*i+angle)%360+360)%360,rad=a*Math.PI/180,x=Math.sin(rad)*RADIUS,z=Math.cos(rad)*RADIUS,norm=(z+RADIUS)/(2*RADIUS),sc=.62+norm*.38,y=28+(1-norm)*26,op=.38+norm*.62;el.style.cssText="transform:translate("+(x-CARD_W/2)+"px,"+y+"px) scale("+sc+") rotateY("+(-a*.08)+"deg);opacity:"+op+";z-index:"+Math.round(norm*100);el.classList.toggle("is-front",a<18||a>342);});}
-function getFrontIdx(){const n=visible.length;if(!n)return -1;const step=360/n;let best=0,bd=999;visible.forEach((_,i)=>{const a=((step*i+angle)%360+360)%360,d=Math.min(a,360-a);if(d<bd){bd=d;best=i;}});return best;}
-function updateSpotlight(){const i=getFrontIdx(),el=document.getElementById("front-spotlight");if(i<0){el.textContent="";return;}const p=visible[i];el.innerHTML='<em>'+esc(p.name)+'</em> &nbsp;\u2014&nbsp; \u20B9'+p.price.toLocaleString("en-IN");}
-function rotateTo(dir){const n=visible.length;if(!n)return;target=angle+(dir>0?-(360/n):(360/n));if(!raf)animLoop();}
-function animLoop(){const diff=target-angle;if(Math.abs(diff)<.3){angle=target;placeItems();updateSpotlight();raf=null;return;}angle+=diff*.13;placeItems();updateSpotlight();raf=requestAnimationFrame(animLoop);}
-
-// Drag / swipe / keyboard
-document.addEventListener("mousedown",e=>{if(e.target.closest(".carousel-vp")){dragX=e.clientX;dragging=true;}});
-document.addEventListener("touchstart",e=>{dragX=e.touches[0].clientX;dragging=true;},{passive:true});
-document.addEventListener("mousemove",e=>{if(!dragging||dragX===null)return;const dx=e.clientX-dragX;if(Math.abs(dx)>36){rotateTo(dx<0?1:-1);dragX=e.clientX;}});
-document.addEventListener("touchmove",e=>{if(!dragging||dragX===null)return;const dx=e.touches[0].clientX-dragX;if(Math.abs(dx)>36){rotateTo(dx<0?1:-1);dragX=e.touches[0].clientX;}},{passive:true});
-document.addEventListener("mouseup",()=>{dragging=false;dragX=null;});
-document.addEventListener("touchend",()=>{dragging=false;dragX=null;});
-document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")rotateTo(1);if(e.key==="ArrowLeft")rotateTo(-1);});
-
-// ═══════════════════════════════════════════════════════════
-//  CATEGORY FILTER
-// ═══════════════════════════════════════════════════════════
-function setCategory(cat,el){
-  currentCat=cat;
-  document.querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
-  document.querySelectorAll("#main-nav a").forEach(a=>a.classList.remove("active"));
-  if(el){el.classList.add("active");}
-  else{
-    document.querySelectorAll('.cat-pill[data-cat="'+cat+'"],.cat-pill[data-cat="all"]').forEach(p=>{if(p.dataset.cat===cat)p.classList.add("active");});
-    document.querySelectorAll('#main-nav a[data-cat="'+cat+'"],#main-nav a[data-cat="all"]').forEach(a=>{if(a.dataset.cat===cat)a.classList.add("active");});
-  }
-  visible=cat==="all"?[...products]:products.filter(p=>p.cat===cat);
-  angle=0;target=0;buildHanger();goCollection();
-}
-function goCollection(){document.getElementById("collection-sec").scrollIntoView({behavior:"smooth",block:"start"});}
-
-// ═══════════════════════════════════════════════════════════
-//  PRODUCT DETAIL MODAL
-// ═══════════════════════════════════════════════════════════
-function openPD(id){
-  const p=products.find(x=>x.id===id);if(!p)return;
-  const disc=p.mrp>p.price?Math.round(((p.mrp-p.price)/p.mrp)*100):0;
-  document.getElementById("pd-img").innerHTML=p.img?'<img src="'+p.img+'" alt="'+esc(p.name)+'" onerror="this.style.display=\'none\'">':'<span>'+p.emoji+'</span>';
-  document.getElementById("pd-info").innerHTML='<div><div class="modal-eyebrow">'+esc(p.cat)+'</div><div class="modal-name">'+esc(p.name)+'</div><div class="modal-price-el">\u20B9'+p.price.toLocaleString("en-IN")+(p.mrp>p.price?'<span class="modal-mrp">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div>'+(disc>0?'<div class="modal-disc">'+disc+'% off MRP</div>':'')+'<p class="modal-desc">'+esc(p.desc)+'</p></div><div class="modal-acts"><button class="btn-add" data-pid="'+esc(p.id)+'" onclick="addToCart(this.dataset.pid);document.getElementById(\'pd-modal\').classList.remove(\'open\')">Add to Bag</button><button class="btn-wa-modal" data-pid="'+esc(p.id)+'" onclick="shareWA(this.dataset.pid)">\u{1F4AC} &nbsp; Enquire on WhatsApp</button></div>';
-  document.getElementById("pd-modal").classList.add("open");
-}
-
-// ═══════════════════════════════════════════════════════════
-//  CART
-// ═══════════════════════════════════════════════════════════
-function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const ex=cart.find(i=>i.id===id);if(ex)ex.qty++;else cart.push({...p,qty:1});updateCartUI();showToast('"'+p.name+'" added to bag',"ok");}
-function updateCartUI(){document.getElementById("cart-count").textContent=cart.reduce((s,i)=>s+i.qty,0);renderCart();}
-function renderCart(){
-  const el=document.getElementById("cart-items-el"),ft=document.getElementById("cart-foot");
-  if(!cart.length){el.innerHTML='<div class="cart-empty-msg">Your bag is empty.</div>';ft.style.display="none";return;}
-  ft.style.display="block";let total=0;
-  el.innerHTML=cart.map(item=>{total+=item.price*item.qty;const img=item.img?'<img src="'+item.img+'" style="width:100%;height:100%;object-fit:cover">':'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:32px">'+item.emoji+'</div>';return '<div class="cart-item"><div class="ci-img">'+img+'</div><div class="ci-info"><div class="ci-name">'+esc(item.name)+'</div><div class="ci-price">\u20B9'+(item.price*item.qty).toLocaleString("en-IN")+'</div><div class="qty-row"><button class="qty-btn" data-cid="'+esc(item.id)+'" onclick="chQ(this.dataset.cid,-1)">\u2212</button><span class="qty-n">'+item.qty+'</span><button class="qty-btn" data-cid="'+esc(item.id)+'" onclick="chQ(this.dataset.cid,1)">+</button></div><button class="ci-remove" data-cid="'+esc(item.id)+'" onclick="remCart(this.dataset.cid)">Remove</button></div></div>';}).join("");
-  document.getElementById("cart-total-el").textContent="\u20B9"+total.toLocaleString("en-IN");
-}
-function chQ(id,d){const i=cart.find(x=>x.id===id);if(!i)return;i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id);updateCartUI();}
-function remCart(id){cart=cart.filter(x=>x.id!==id);updateCartUI();}
-function openCart(){document.getElementById("cart-drawer").classList.add("open");document.getElementById("drawer-ov").classList.add("open");renderCart();}
-function closeCart(){document.getElementById("cart-drawer").classList.remove("open");document.getElementById("drawer-ov").classList.remove("open");}
-function checkoutWA(){
-  if(!cart.length)return;const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  let msg="\u{1F6CD}\uFE0F *My Order \u2014 "+siteSettings.name+"*\n\n*Items:*\n";
-  cart.forEach(i=>{msg+="\u2022 "+i.emoji+" "+i.name+"  x"+i.qty+"  \u20B9"+(i.price*i.qty).toLocaleString("en-IN")+"\n";if(i.img&&!i.img.startsWith("data:"))msg+="  \u{1F5BC}\uFE0F "+i.img+"\n";});
-  msg+="\n*Total: \u20B9"+total.toLocaleString("en-IN")+"*\n\nKindly confirm. \u{1F64F}";
-  window.open("https://wa.me/"+siteSettings.whatsapp+"?text="+encodeURIComponent(msg),"_blank");
-}
-function shareWA(id){
-  const p=products.find(x=>x.id===id);if(!p)return;
-  let msg=p.emoji+" *"+p.name+"*\n\u20B9"+p.price.toLocaleString("en-IN");
-  if(p.mrp>p.price)msg+=" (MRP \u20B9"+p.mrp.toLocaleString("en-IN")+")";
-  msg+="\n"+p.desc;if(p.img&&!p.img.startsWith("data:"))msg+="\n\u{1F5BC}\uFE0F "+p.img;
-  window.open("https://wa.me/"+siteSettings.whatsapp+"?text="+encodeURIComponent(msg),"_blank");
-  showToast("Opening WhatsApp\u2026","wa");
-}
-function openContact(){document.getElementById("contact-modal").classList.add("open");}
-
-// ═══════════════════════════════════════════════════════════
-//  ADMIN AUTH
-// ═══════════════════════════════════════════════════════════
-function openAdmin(){
-  document.getElementById("admin-ov").classList.add("open");
-  if(adminUnlocked){document.getElementById("admin-lock-screen").style.display="none";document.getElementById("admin-panel").style.display="block";renderAdminList();}
-}
-async function unlockAdmin(){const email=document.getElementById("adm-email").value.trim(),pw=document.getElementById("adm-pw").value;if(!email||!pw){showToast("Enter email & password");return;}try{await signInWithEmailAndPassword(auth,email,pw);showToast("Welcome, Admin","ok");}catch(e){showToast("Incorrect credentials");document.getElementById("adm-pw").value="";}}
-async function adminSignOut(){try{await firebaseSignOut(auth);closeAdmin();showToast("Signed out","ok");}catch(e){showToast("Sign out failed");}}
-onAuthStateChanged(auth,user=>{
-  adminUnlocked=!!user;
-  const btn=document.getElementById("admin-toggle-btn");
-  if(user){
-    btn.textContent="Admin";
-    document.getElementById("admin-lock-screen").style.display="none";
-    document.getElementById("admin-panel").style.display="block";
-    renderAdminList();populateAdminFields();
-  }else{
-    btn.textContent="Sign In";
-    document.getElementById("admin-lock-screen").style.display="block";
-    document.getElementById("admin-panel").style.display="none";
-  }
-});
-function closeAdmin(){document.getElementById("admin-ov").classList.remove("open");}
-
-// ═══════════════════════════════════════════════════════════
-//  PRODUCT CRUD
-// ═══════════════════════════════════════════════════════════
-async function applyHero(input){
-  const file=input.files[0];if(!file)return;showToast("Uploading\u2026");
-  try{const sr=sRef(storage,"hero/"+Date.now()+"_"+file.name);await uploadBytes(sr,file);const url=await getDownloadURL(sr);document.getElementById("hero-bg").style.cssText="background-image:url('"+url+"');background-size:cover;background-position:center";const p=document.getElementById("hero-prev");p.src=url;p.style.display="block";siteSettings.heroImage=url;await setDoc(doc(db,"settings","shop"),siteSettings);showToast("Hero updated","ok");}
-  catch(e){const r=new FileReader();r.onload=ev=>{document.getElementById("hero-bg").style.cssText="background-image:url('"+ev.target.result+"');background-size:cover;background-position:center";const p=document.getElementById("hero-prev");p.src=ev.target.result;p.style.display="block";};r.readAsDataURL(file);showToast("Hero updated locally","ok");}
-}
-function prevProdImg(input){const file=input.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{const p=document.getElementById("np-img-prev");p.src=e.target.result;p.style.display="block";};r.readAsDataURL(file);}
-async function addProduct(){
-  const name=document.getElementById("np-name").value.trim(),price=parseInt(document.getElementById("np-price").value),mrp=parseInt(document.getElementById("np-mrp").value)||price;
-  if(!name||!price){showToast("Fill Name & Price");return;}showToast("Adding\u2026");
-  let imgUrl="";const fi=document.getElementById("np-img-up");
-  if(fi.files&&fi.files[0]){try{const f=fi.files[0],sr=sRef(storage,"products/"+Date.now()+"_"+f.name);await uploadBytes(sr,f);imgUrl=await getDownloadURL(sr);}catch(e){console.warn("Upload failed:",e);}}
-  const pd={name,cat:document.getElementById("np-cat").value,price,mrp,desc:document.getElementById("np-desc").value.trim()||"A beautiful piece from our collection.",emoji:document.getElementById("np-emoji").value.trim()||"\u{1F457}",img:imgUrl};
-  try{await addDoc(collection(db,"products"),pd);await loadProducts();}catch(e){products.push({...pd,id:"local_"+Date.now()});visible=currentCat==="all"?[...products]:products.filter(p=>p.cat===currentCat);buildHanger();}
-  renderAdminList();["np-name","np-price","np-mrp","np-desc"].forEach(id=>document.getElementById(id).value="");document.getElementById("np-img-prev").style.display="none";document.getElementById("np-emoji").value="\u{1F458}";if(fi)fi.value="";showToast('"'+name+'" added',"ok");
-}
-function renderAdminList(){document.getElementById("adm-prod-list").innerHTML=products.length?products.map(p=>'<div class="adm-row"><div class="adm-row-emoji">'+p.emoji+'</div><div class="adm-row-info"><strong>'+esc(p.name)+'</strong><small>'+esc(p.cat)+' \u00B7 \u20B9'+p.price.toLocaleString("en-IN")+'</small></div><button class="adm-del" data-del-pid="'+esc(p.id)+'" onclick="delProduct(this.dataset.delPid)">Delete</button></div>').join(""):'<p style="font-style:italic;color:var(--dust);font-size:13px">No products yet.</p>';}
-async function delProduct(id){if(!confirm("Remove this piece?"))return;try{await deleteDoc(doc(db,"products",id));await loadProducts();}catch(e){products=products.filter(x=>x.id!==id);visible=currentCat==="all"?[...products]:products.filter(p=>p.cat===currentCat);buildHanger();}renderAdminList();showToast("Product removed","ok");}
-
-// ═══════════════════════════════════════════════════════════
-//  TOAST & CURSOR
-// ═══════════════════════════════════════════════════════════
-function showToast(msg,type){type=type||"";const t=document.getElementById("toast");t.textContent=msg;t.className="toast show"+(type?" "+type:"");clearTimeout(t._t);t._t=setTimeout(()=>t.className="toast",2800);}
-const dot=document.getElementById("cursorDot"),ring=document.getElementById("cursorRing");
-document.addEventListener("mousemove",e=>{dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px";ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";});
-document.addEventListener("mousedown",()=>{dot.style.transform="translate(-50%,-50%) scale(2.2)";ring.style.transform="translate(-50%,-50%) scale(0.55)";});
-document.addEventListener("mouseup",()=>{dot.style.transform="translate(-50%,-50%)";ring.style.transform="translate(-50%,-50%)";});
-
-// ═══════════════════════════════════════════════════════════
-//  HERO SLIDER
-// ═══════════════════════════════════════════════════════════
-let heroIdx=0;
-const heroSlides=[{emoji:"\u{1F458}",bg:"linear-gradient(135deg,#1C1712 0%,#3A2A1A 100%)"},{emoji:"\u{1F338}",bg:"linear-gradient(135deg,#2A1428 0%,#4A2040 100%)"},{emoji:"\u{1F451}",bg:"linear-gradient(135deg,#0A1A2A 0%,#1A3A5A 100%)"}];
-function buildHeroThumbs(){document.getElementById("hero-thumbs").innerHTML=heroSlides.map((s,i)=>'<div class="hero-thumb '+(i===0?"active":"")+'" onclick="setHeroSlide('+i+')" id="ht-'+i+'"><div class="hero-thumb-img" style="background:'+s.bg+'">'+s.emoji+'</div></div>').join("");}
-function setHeroSlide(i){heroIdx=i;const s=heroSlides[i];document.getElementById("hero-bg").style.cssText="background:"+s.bg+";background-size:cover";document.querySelectorAll(".hero-thumb").forEach((t,j)=>t.classList.toggle("active",j===i));}
-setInterval(()=>setHeroSlide((heroIdx+1)%heroSlides.length),4500);
-
-// ═══════════════════════════════════════════════════════════
-//  EXPOSE TO WINDOW
-// ═══════════════════════════════════════════════════════════
-Object.assign(window,{
-  setCategory,goCollection,openCart,closeCart,rotateTo,openPD,addToCart,shareWA,openContact,
-  openAdmin,unlockAdmin,adminSignOut,closeAdmin,saveAllSettings,
-  applyHero,prevProdImg,addProduct,delProduct,renderAdminList,
-  addCategory,removeCategory,
-  checkoutWA,chQ,remCart,setHeroSlide
-});
-
-// ═══════════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════════
-buildHeroThumbs();
-buildHanger();
-loadCategories();
-loadProducts();
-loadSettings();
-</script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
+
