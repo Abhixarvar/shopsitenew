@@ -87,8 +87,8 @@ nav{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filte
 .hero-thumb-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px}
 .hero-thumb-img img{width:100%;height:100%;object-fit:cover}
 
-/* Sections — content-visibility for offscreen rendering */
-.section{max-width:1280px;margin:0 auto;padding:68px 40px;content-visibility:auto;contain-intrinsic-size:0 600px}
+/* Sections */
+.section{max-width:1280px;margin:0 auto;padding:68px 40px;}
 .sec-eyebrow{font-family:"Outfit", sans-serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:12px;font-weight:500}
 .sec-eyebrow::before{content:"";width:30px;height:1.5px;background:var(--gold)}
 .sec-title{font-family:"Playfair Display", serif;font-size:46px;font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:44px}
@@ -121,8 +121,8 @@ nav{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filte
 .cloth-price{font-family:"Outfit", sans-serif;font-size:14.5px;font-weight:700;color:var(--ink)}
 .cloth-old{font-family:"Outfit", sans-serif;font-size:11.5px;color:var(--ink2);text-decoration:line-through;opacity:.6}
 .cloth-actions{display:flex;gap:0;margin-top:10px;border-top:1px solid rgba(255,255,255,0.4);padding-top:10px}
-.c-add-btn{flex:1;background:rgba(28,23,18,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--white);border:1px solid rgba(255,255,255,0.1);border-radius:12px 0 0 12px;padding:10px 6px;font-family:"Outfit", sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;font-weight:500}
-.c-add-btn:hover{background:var(--gold);color:var(--ink)}
+.c-add-btn{flex:1;background:var(--ink);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--cream);border:1px solid var(--glass-border);border-radius:12px 0 0 12px;padding:10px 6px;font-family:"Outfit", sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;font-weight:500}
+.c-add-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .c-wa-btn{background:var(--item-bg);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-border);border-left:none;border-radius:0 12px 12px 0;padding:10px 14px;cursor:pointer;font-size:15px;color:var(--ink2);transition:all .2s}
 .c-wa-btn:hover{background:#25D366;color:#fff;border-color:#25D366}
 .rotate-controls{display:flex;align-items:center;gap:28px;margin-top:24px;position:relative;z-index:20}
@@ -136,7 +136,7 @@ nav{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filte
 .ornament{text-align:center;padding:28px 0 0;color:var(--gold);font-size:18px;letter-spacing:12px;opacity:.5}
 
 /* Promo cards */
-.promo-duet{display:grid;grid-template-columns:1fr 1fr;gap:24px;content-visibility:auto;contain-intrinsic-size:0 400px}
+.promo-duet{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .promo-card{position:relative;height:400px;overflow:hidden;cursor:pointer;border-radius:28px;border:1px solid var(--glass-border);box-shadow:var(--glass-shadow)}
 .promo-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:center;font-size:80px;will-change:transform}
 .promo-card:hover .promo-bg{transform:scale(1.04)}
@@ -150,7 +150,7 @@ nav{background:var(--glass-bg);backdrop-filter:blur(16px);-webkit-backdrop-filte
 .promo-card:hover .promo-cta{gap:14px}
 
 /* Footer */
-footer{background:var(--glass-dark);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);color:var(--dust);padding:68px 40px 32px;margin:40px;border-radius:32px;border:1px solid rgba(255,255,255,0.1);content-visibility:auto;contain-intrinsic-size:0 300px;box-shadow:0 16px 40px rgba(0,0,0,0.1)}
+footer{background:var(--glass-dark);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);color:var(--dust);padding:68px 40px 32px;margin:40px;border-radius:32px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 16px 40px rgba(0,0,0,0.1)}
 .footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;margin-bottom:48px}
 .footer-logo{font-family:"Playfair Display", serif;font-size:20px;letter-spacing:3px;color:var(--cream);margin-bottom:5px}
 .footer-logo span{color:var(--gold)}
