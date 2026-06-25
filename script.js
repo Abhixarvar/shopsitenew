@@ -609,7 +609,7 @@ if (savedTheme === "light") {
 
 
 // ═══════════════════════════════════════════════════════════
-//  VIDEO TOGGLE
+//  VIDEO TOGGLE & PLAYLIST
 // ═══════════════════════════════════════════════════════════
 function toggleVideo() {
   const vid = document.getElementById("bg-video");
@@ -624,4 +624,15 @@ function toggleVideo() {
     icon.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
     text.innerText = "Play Video";
   }
+}
+
+const bgVid = document.getElementById("bg-video");
+if (bgVid) {
+  const playlist = ["second_cinematic_luxury_fas.mp4", "make_an_advertisement_shoot_wi.mp4"];
+  let playIdx = 0;
+  bgVid.addEventListener("ended", () => {
+    playIdx = (playIdx + 1) % playlist.length;
+    bgVid.src = playlist[playIdx];
+    bgVid.play().catch(e => console.warn("Video playlist play failed", e));
+  });
 }
