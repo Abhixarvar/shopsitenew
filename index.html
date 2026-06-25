@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-theme">
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
@@ -35,7 +35,9 @@
       <div class="brand-addr" id="brand-addr-el">F4-3, Sector-16, Rohini, Delhi — 110085</div>
     </div>
     <div class="hdr-side right">
-      <button class="hdr-icon-btn" onclick="toggleTheme()" id="theme-toggle-btn">&#x1F316;</button>
+      <button class="hdr-icon-btn" onclick="toggleTheme()" id="theme-toggle-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
       <button class="hdr-icon-btn" onclick="openCart()">Bag <span class="cart-badge" id="cart-count">0</span></button>
     </div>
   </div>
@@ -58,14 +60,12 @@
   <div class="hero-thumbs" id="hero-thumbs"></div>
 </div>
 
-<div class="section" style="padding-top:10px; padding-bottom:10px;">
-  <div style="position:relative; width:100%; height:460px; border-radius:28px; overflow:hidden; border:1px solid var(--glass-border); box-shadow:var(--glass-shadow);">
-    <video id="bg-video" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
-      <source src="second_cinematic_luxury_fas.mp4" type="video/mp4">
-    </video>
-    <div style="position:absolute; bottom:24px; right:24px; background:var(--glass-dark); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:12px 24px; border-radius:24px; border:1px solid var(--glass-border); color:var(--gold); font-family:'Outfit', sans-serif; font-size:11px; cursor:pointer; text-transform:uppercase; letter-spacing:2px; display:flex; align-items:center; gap:10px; font-weight:600; transition:all 0.3s;" onclick="toggleVideo()" id="vid-toggle-btn">
-      <span id="vid-icon">&#x23F8;</span> <span id="vid-text">Pause Video</span>
-    </div>
+<div style="position:relative; width:100%; height:85vh; min-height:460px; overflow:hidden; margin: 40px 0;">
+  <video id="bg-video" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
+    <source src="second_cinematic_luxury_fas.mp4" type="video/mp4">
+  </video>
+  <div style="position:absolute; bottom:24px; right:40px; background:var(--glass-dark); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:12px 24px; border-radius:24px; border:1px solid var(--glass-border); color:var(--gold); font-family:'Outfit', sans-serif; font-size:11px; cursor:pointer; text-transform:uppercase; letter-spacing:2px; display:flex; align-items:center; gap:10px; font-weight:600; transition:all 0.3s;" onclick="toggleVideo()" id="vid-toggle-btn">
+    <span id="vid-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg></span> <span id="vid-text">Pause Video</span>
   </div>
 </div>
 
@@ -100,7 +100,7 @@
 <div class="section" style="padding-top:50px">
   <div class="promo-duet">
     <div class="promo-card" id="promo-card-1">
-      <div class="promo-bg" style="background:linear-gradient(135deg,#2A1F14 0%,#4A3020 100%)">&#x1F458;</div>
+      <div class="promo-bg" style="background:url('images/red_banarasi_saree.png') center/cover;"></div>
       <div class="promo-ov"></div>
       <div class="promo-txt">
         <div class="promo-eye" id="p1-eye-el">Exclusive</div>
@@ -109,7 +109,7 @@
       </div>
     </div>
     <div class="promo-card" id="promo-card-2">
-      <div class="promo-bg" style="background:linear-gradient(135deg,#2A1428 0%,#4A2040 100%)">&#x1F338;</div>
+      <div class="promo-bg" style="background:url('images/bridal_lehenga.png') center/cover top;"></div>
       <div class="promo-ov"></div>
       <div class="promo-txt">
         <div class="promo-eye" id="p2-eye-el">Bridal</div>
@@ -128,10 +128,10 @@
       <p id="footer-addr">
         <a href="https://maps.google.com/?q=F4-3,+Sector-16,+Rohini,+Delhi+110085" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; display:inline-block; transition:opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
           F4-3, Sector-16<br>Rohini, Delhi — 110085<br>
-          <span style="font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-top:4px; display:inline-block;">&#x1F4CD; View on Map</span>
+          <span style="font-size:10px; color:var(--gold); text-transform:uppercase; letter-spacing:1px; margin-top:4px; display:inline-block;">View on Map</span>
         </a>
       </p>
-      <p style="margin-top:5px" data-phone-display>&#x1F4DE; 8799 721 618</p>
+      <p style="margin-top:5px" data-phone-display>8799 721 618</p>
       <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa style="display:inline-block;margin-top:12px;background:#25D366;color:#fff;padding:8px 16px;font-family:'Outfit', sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none">WhatsApp Us</a>
     </div>
     <div class="footer-col" id="footer-nav"><h4>Navigate</h4></div>
@@ -149,7 +149,7 @@
   <div class="cart-scroll" id="cart-items-el"></div>
   <div class="cart-foot" id="cart-foot" style="display:none">
     <div class="cart-total-row"><span>Total</span><span id="cart-total-el">&#x20B9;0</span></div>
-    <button class="btn-wa-checkout" onclick="checkoutWA()">&#x1F4AC; &nbsp; Order via WhatsApp</button>
+    <button class="btn-wa-checkout" onclick="checkoutWA()">Order via WhatsApp</button>
   </div>
 </div>
 
@@ -172,7 +172,9 @@
       <!-- LOGIN -->
       <div id="admin-lock-screen">
         <div class="admin-lock">
-          <div class="admin-lock-icon">&#x1F512;</div>
+          <div class="admin-lock-icon">
+            <svg viewBox="0 0 24 24" width="38" height="38" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
           <p>Enter your credentials to manage the collection</p>
           <div class="fg"><label>Email</label><input type="email" id="adm-email" placeholder="admin@archifashion.com" autocomplete="email"></div>
           <div class="fg"><label>Password</label><input type="password" id="adm-pw" onkeydown="if(event.key==='Enter')unlockAdmin()" autocomplete="current-password"></div>
@@ -262,7 +264,7 @@
           <div class="fg"><label>Tagline</label><input type="text" id="adm-foot-tag"></div>
         </div>
 
-        <button class="adm-btn full" onclick="saveAllSettings()" style="background:var(--gold);color:var(--ink);padding:14px;font-size:11px;letter-spacing:3px">&#x1F4BE; Save All Content</button>
+        <button class="adm-btn full" onclick="saveAllSettings()" style="background:var(--gold);color:var(--ink);padding:14px;font-size:11px;letter-spacing:3px">Save All Content</button>
 
         <!-- ─── CATALOG ─── -->
         <div class="adm-divider"><span>Catalog</span></div>
@@ -282,7 +284,7 @@
           <div class="fg"><label>Name</label><input type="text" id="np-name" placeholder="e.g. Banarasi Silk Saree"></div>
           <div class="fg-2">
             <div class="fg"><label>Category</label><select id="np-cat"></select></div>
-            <div class="fg"><label>Emoji</label><input type="text" id="np-emoji" value="&#x1F458;"></div>
+            <div class="fg"><label>Emoji/Icon Text</label><input type="text" id="np-emoji" value=""></div>
           </div>
           <div class="fg-2">
             <div class="fg"><label>Price &#x20B9;</label><input type="number" id="np-price" placeholder="2999"></div>
@@ -315,8 +317,8 @@
       <p style="font-family:'Outfit', sans-serif;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px">Address</p>
       <p style="font-family:'Playfair Display', serif;font-size:16px;line-height:1.7;font-style:italic" id="contact-addr">F4-3, Sector-16, Rohini, Delhi — 110085</p>
     </div>
-    <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa id="contact-wa-btn" style="display:block;background:rgba(37,211,102,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;border:1px solid rgba(255,255,255,0.3);border-radius:16px;box-shadow:0 4px 15px rgba(37,211,102,0.2)">&#x1F4AC; WhatsApp</a>
-    <a href="tel:8799721618" data-phone id="contact-phone-btn" style="display:block;background:rgba(28,23,18,0.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--white);text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.2);border-radius:16px;box-shadow:0 4px 15px rgba(28,23,18,0.2)">&#x1F4DE; 8799 721 618</a>
+    <a href="https://wa.me/918799721618" target="_blank" rel="noopener" data-wa id="contact-wa-btn" style="display:block;background:rgba(37,211,102,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;border:1px solid rgba(255,255,255,0.3);border-radius:16px;box-shadow:0 4px 15px rgba(37,211,102,0.2)">WhatsApp</a>
+    <a href="tel:8799721618" data-phone id="contact-phone-btn" style="display:block;background:rgba(28,23,18,0.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--white);text-align:center;padding:14px;text-decoration:none;font-family:'Outfit', sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.2);border-radius:16px;box-shadow:0 4px 15px rgba(28,23,18,0.2)">8799 721 618</a>
   </div>
 </div>
 

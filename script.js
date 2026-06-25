@@ -128,9 +128,9 @@ function applySiteSettings(s){
   document.title=s.name+" \u2014 Rohini, Delhi";
   // Phone & WhatsApp links
   document.querySelectorAll("[data-phone]").forEach(a=>{a.href="tel:"+s.phone;a.textContent=fmtPhone(s.phone);});
-  document.querySelectorAll("[data-phone-display]").forEach(el=>{el.innerHTML="\u{1F4DE} "+fmtPhone(s.phone);});
+  document.querySelectorAll("[data-phone-display]").forEach(el=>{el.innerHTML=fmtPhone(s.phone);});
   document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/"+s.whatsapp;});
-  DOM.contactPhoneBtn.innerHTML="\u{1F4DE} "+fmtPhone(s.phone);
+  DOM.contactPhoneBtn.innerHTML=fmtPhone(s.phone);
   buildFooterNav();
   buildFooterContact();
 }
@@ -307,7 +307,7 @@ function buildHanger(){
     const disc=p.mrp>p.price?Math.round(((p.mrp-p.price)/p.mrp)*100):0;
     const imgH=p.img?'<img src="'+p.img+'" alt="'+esc(p.name)+'" loading="lazy" decoding="async" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"><span style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:64px;position:absolute;inset:0">'+p.emoji+'</span>':'<span>'+p.emoji+'</span>';
     const el=document.createElement("div");el.className="cloth-item";el.id="cl-"+i;
-    el.innerHTML='<svg class="hanger-wire" viewBox="0 0 20 22" fill="none"><path d="M10 2 Q14 2 14 7 Q14 10 10 11 Q2 13 2 18 Q2 22 18 22" stroke="#9A9080" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="2" r="2" fill="#9A9080"/></svg><div class="cloth-card" data-pid="'+esc(p.id)+'" onclick="openPD(this.dataset.pid)"><div class="cloth-img-wrap">'+imgH+(disc>0?'<div class="cloth-badge">'+disc+'% off</div>':'')+'</div><div class="cloth-info"><div class="cloth-name">'+esc(p.name)+'</div><div class="cloth-pricing"><span class="cloth-price">\u20B9'+p.price.toLocaleString("en-IN")+'</span>'+(p.mrp>p.price?'<span class="cloth-old">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div></div><div class="cloth-actions"><button class="c-add-btn" onclick="event.stopPropagation();addToCart(this.closest(\'[data-pid]\').dataset.pid)">Add to Bag</button><button class="c-wa-btn" onclick="event.stopPropagation();shareWA(this.closest(\'[data-pid]\').dataset.pid)" title="WhatsApp">\u{1F4AC}</button></div></div>';
+    el.innerHTML='<svg class="hanger-wire" viewBox="0 0 20 22" fill="none"><path d="M10 2 Q14 2 14 7 Q14 10 10 11 Q2 13 2 18 Q2 22 18 22" stroke="#9A9080" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="2" r="2" fill="#9A9080"/></svg><div class="cloth-card" data-pid="'+esc(p.id)+'" onclick="openPD(this.dataset.pid)"><div class="cloth-img-wrap">'+imgH+(disc>0?'<div class="cloth-badge">'+disc+'% off</div>':'')+'</div><div class="cloth-info"><div class="cloth-name">'+esc(p.name)+'</div><div class="cloth-pricing"><span class="cloth-price">\u20B9'+p.price.toLocaleString("en-IN")+'</span>'+(p.mrp>p.price?'<span class="cloth-old">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div></div><div class="cloth-actions"><button class="c-add-btn" onclick="event.stopPropagation();addToCart(this.closest(\'[data-pid]\').dataset.pid)">Add to Bag</button><button class="c-wa-btn" style="font-size:10px;text-transform:uppercase;letter-spacing:1px" onclick="event.stopPropagation();shareWA(this.closest(\'[data-pid]\').dataset.pid)" title="WhatsApp">Share</button></div></div>';
     frag.appendChild(el);
   });
   stage.appendChild(frag);
@@ -403,7 +403,7 @@ function openPD(id){
   const p=products.find(x=>x.id===id);if(!p)return;
   const disc=p.mrp>p.price?Math.round(((p.mrp-p.price)/p.mrp)*100):0;
   DOM.pdImg.innerHTML=p.img?'<img src="'+p.img+'" alt="'+esc(p.name)+'" loading="eager" decoding="async" onerror="this.style.display=\'none\'">':'<span>'+p.emoji+'</span>';
-  DOM.pdInfo.innerHTML='<div><div class="modal-eyebrow">'+esc(p.cat)+'</div><div class="modal-name">'+esc(p.name)+'</div><div class="modal-price-el">\u20B9'+p.price.toLocaleString("en-IN")+(p.mrp>p.price?'<span class="modal-mrp">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div>'+(disc>0?'<div class="modal-disc">'+disc+'% off MRP</div>':'')+'<p class="modal-desc">'+esc(p.desc)+'</p></div><div class="modal-acts"><button class="btn-add" data-pid="'+esc(p.id)+'" onclick="addToCart(this.dataset.pid);document.getElementById(\'pd-modal\').classList.remove(\'open\')">Add to Bag</button><button class="btn-wa-modal" data-pid="'+esc(p.id)+'" onclick="shareWA(this.dataset.pid)">\u{1F4AC} &nbsp; Enquire on WhatsApp</button></div>';
+  DOM.pdInfo.innerHTML='<div><div class="modal-eyebrow">'+esc(p.cat)+'</div><div class="modal-name">'+esc(p.name)+'</div><div class="modal-price-el">\u20B9'+p.price.toLocaleString("en-IN")+(p.mrp>p.price?'<span class="modal-mrp">\u20B9'+p.mrp.toLocaleString("en-IN")+'</span>':'')+'</div>'+(disc>0?'<div class="modal-disc">'+disc+'% off MRP</div>':'')+'<p class="modal-desc">'+esc(p.desc)+'</p></div><div class="modal-acts"><button class="btn-add" data-pid="'+esc(p.id)+'" onclick="addToCart(this.dataset.pid);document.getElementById(\'pd-modal\').classList.remove(\'open\')">Add to Bag</button><button class="btn-wa-modal" data-pid="'+esc(p.id)+'" onclick="shareWA(this.dataset.pid)">Enquire on WhatsApp</button></div>';
   DOM.pdModal.classList.add("open");
 }
 
@@ -555,28 +555,38 @@ buildHanger();
 Promise.allSettled([loadCategories(),loadProducts(),loadSettings()]);
 
 // ═══════════════════════════════════════════════════════════
-//  SCROLL LISTENER (Top Banner & Brand Fade)
+//  SCROLL LISTENER (Header Shrink & Hide on Scroll Down)
 // ═══════════════════════════════════════════════════════════
+let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
   const topbar = document.getElementById("topbar-banner");
-  const brand = document.querySelector(".brand");
+  const header = document.getElementById("main-header");
+  const currentScrollY = window.scrollY;
   
+  if (header) {
+    if (currentScrollY > 50) {
+      header.classList.add("scrolled");
+      // Hide if scrolling down past 150px
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        header.classList.add("hide-up");
+      } else {
+        header.classList.remove("hide-up");
+      }
+    } else {
+      header.classList.remove("scrolled");
+      header.classList.remove("hide-up");
+    }
+  }
+
   if (topbar) {
-    if (window.scrollY > 50) {
+    if (currentScrollY > 50) {
       topbar.classList.add("hidden");
     } else {
       topbar.classList.remove("hidden");
     }
   }
   
-  if (brand) {
-    // Fade brand slightly later than topbar
-    if (window.scrollY > 150) {
-      brand.classList.add("hidden");
-    } else {
-      brand.classList.remove("hidden");
-    }
-  }
+  lastScrollY = currentScrollY;
 }, { passive: true });
 
 // ═══════════════════════════════════════════════════════════
@@ -589,7 +599,10 @@ function toggleTheme() {
 }
 
 // Check local storage for theme on load
-if (localStorage.getItem("theme") === "dark") {
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  document.body.classList.remove("dark-theme");
+} else {
   document.body.classList.add("dark-theme");
 }
 
@@ -604,11 +617,11 @@ function toggleVideo() {
   const text = document.getElementById("vid-text");
   if (vid.paused) {
     vid.play();
-    icon.innerHTML = "&#x23F8;";
+    icon.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>';
     text.innerText = "Pause Video";
   } else {
     vid.pause();
-    icon.innerHTML = "&#x25B6;";
+    icon.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
     text.innerText = "Play Video";
   }
 }
